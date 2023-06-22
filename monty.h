@@ -16,18 +16,18 @@
 	{"push", push_op}, \
 	{"pall", pall_op}, \
 	{"pint", pint_op}, \
-	{"pop", pop_op}, \
-	{"rotr", rotr_op}, \
-	{"swap", swap_op}, \
-	{"rotl", rotl_op}, \
+	{"pop", pop_top}, \
+	{"rotr", last_top}, \
+	{"swap", swap_top}, \
+	{"rotl",top2_last}, \
 	{"nop", nop_op}, \
 	{"pstr", pstr_op}, \
-	{"div", div_op}, \
-	{"pchar", pchar_op}, \
-	{"mul", mul_op}, \
+	{"div", div_two}, \
+	{"pchar", charpr_top}, \
+	{"mul",mult_top}, \
 	{"mod", mod_op}, \
-	{"add", add_op}, \
-	{"sub", sub_op}, \
+	{"add", add_top}, \
+	{"sub", sub_top}, \
 	{NULL, NULL} \
 }
 
@@ -77,28 +77,29 @@ typedef struct OpcodeArgument
 OpcodeArgument globalData;
 
 /* prototypes */
-void rotr_op(stack_t **my_stack, unsigned int line_no);
-void add_op(stack_t **my_stack, unsigned int line_no);
-void push_op(stack_t **my_stack, unsigned int line_no);
-void pall_op(stack_t **my_stack, unsigned int line_no);
-void pint_op(stack_t **my_stack, unsigned int line_no);
-void swap_op(stack_t **my_stack, unsigned int line_no);
-void pop_op(stack_t **my_stack, unsigned int line_no);
-void nop_op(stack_t **my_stack, unsigned int line_no);
-void div_op(stack_t **my_stack, unsigned int line_no);
-void sub_op(stack_t **my_stack, unsigned int line_no);
-void mul_op(stack_t **my_stack, unsigned int line_no);
-void mod_op(stack_t **my_stack, unsigned int line_no);
-void pstr_op(stack_t **my_stack, unsigned int line_no);
-void pchar_op(stack_t **mystack, unsigned int line_no);
-void rotl_op(stack_t **my_stack, unsigned int line_no);
-stack_t *nodeadd(stack_t **my_stack, const int n);
-stack_t *enqueue_(stack_t **my_stack, const int n);
-void opcode_(stack_t **my_stack, char *str, unsigned int line_no);
-int is_digit(char *str);
+void last_top(stack_t **my_stack, unsigned int line_num);
+void add_top(stack_t **my_stack, unsigned int line_num);
+void push_op(stack_t **my_stack, unsigned int line_num);
+void pall_op(stack_t **my_stack, unsigned int line_num);
+void pint_op(stack_t **my_stack, unsigned int line_num);
+void swap_top(stack_t **my_stack, unsigned int line_num);
+void pop_top(stack_t **my_stack, unsigned int line_num);
+void nop_op(stack_t **my_stack, unsigned int line_num);
+void div_two(stack_t **my_stack, unsigned int line_num);
+void sub_top(stack_t **my_stack, unsigned int line_num);
+voidmult_top(stack_t **my_stack, unsigned int line_num);
+void mod_op(stack_t **my_stack, unsigned int line_num);
+void pstr_op(stack_t **my_stack, unsigned int line_num);
+void charpr_top(stack_t **mystack, unsigned int line_num);
+voidtop2_last(stack_t **my_stack, unsigned int line_num);
+stack_t *addnode(stack_t **my_stack, const int n);
+stack_t *add_enque(stack_t **my_stack, const int n);
+void opcode_(stack_t **my_stack, char *str, unsigned int line_num);
+int str_digit(char *str);
 int check_number(char *str_);
-void stackfreeing(stack_t *my_stack);
-size_t stack_display(const stack_t *my_stack);
-void print_file_error(char *argv);
-void print_error_usage(void);
+void stack_free(stack_t *my_stack);
+size_t display_stack(const stack_t *my_stack);
+void print_error_file(char *argv);
+void print_usage(void);
 #endif /*MONTY_H */
+
