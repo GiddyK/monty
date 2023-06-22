@@ -24,7 +24,7 @@
 	{"pstr", pstr_op}, \
 	{"div", div_two}, \
 	{"pchar", charpr_top}, \
-	{"mul",mult_top}, \
+	{"mul", ult_top}, \
 	{"mod", mod_op}, \
 	{"add", add_top}, \
 	{"sub", sub_top}, \
@@ -87,11 +87,11 @@ void pop_top(stack_t **my_stack, unsigned int line_num);
 void nop_op(stack_t **my_stack, unsigned int line_num);
 void div_two(stack_t **my_stack, unsigned int line_num);
 void sub_top(stack_t **my_stack, unsigned int line_num);
-voidmult_top(stack_t **my_stack, unsigned int line_num);
+void mult_top(stack_t **my_stack, unsigned int line_num);
 void mod_op(stack_t **my_stack, unsigned int line_num);
 void pstr_op(stack_t **my_stack, unsigned int line_num);
 void charpr_top(stack_t **mystack, unsigned int line_num);
-voidtop2_last(stack_t **my_stack, unsigned int line_num);
+void top2_last(stack_t **my_stack, unsigned int line_num);
 stack_t *addnode(stack_t **my_stack, const int n);
 stack_t *add_enque(stack_t **my_stack, const int n);
 void opcode_(stack_t **my_stack, char *str, unsigned int line_num);
