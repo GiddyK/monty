@@ -24,7 +24,7 @@
 	{"pstr", pstr_op}, \
 	{"div", div_two}, \
 	{"pchar", charpr_top}, \
-	{"mul", ult_top}, \
+	{"mul",  mult_top}, \
 	{"mod", mod_op}, \
 	{"add", add_top}, \
 	{"sub", sub_top}, \
