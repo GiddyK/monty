@@ -16,14 +16,14 @@ void push_op(stack_t **my_stack, unsigned int line_num)
 	}
 	if (globalData.mode == 1) /*1 for stack ,0 for queue*/
 	{
-		if (!nodeadd(my_stack, atoi(globalData.arg)))
+		if ( !addnode (my_stack, atoi(globalData.arg)))
 		{
 			exit(EXIT_FAILURE);
 		}
 	}
 	else
 	{
-		if (!enqueue_(my_stack, atoi(globalData.arg)))
+		if (!add_enque(my_stack, atoi(globalData.arg)))
 		{
 			exit(EXIT_FAILURE);
 		}
